@@ -1,12 +1,12 @@
 # Marvel Data Pipeline
 
-[![Data Pipeline Image](architecture/DataPipeline.png)](architecture/DataPipeline.png)
+[![Character Count Image](architecture/count.png)](architecture/count.png)
 
 This project implements a data pipeline for Marvel comic book data. It includes data extraction, transformation, loading (ETL), and analysis using Python and SQLite3.
 
 ## Project Structure
 
-* **`Comic_Character_Analysis.ipynb`**: Jupyter Notebook for data analysis and visualization, including plots of character and comic data, and total character counts using Pandas.
+* **`Comic_Character_Analysis.ipynb`**: Jupyter Notebook for data analysis and visualization, including plots of character and comic data, and total character counts using Pandas, with the result shown in `count.png`.
 * **`DataLayer/`**: Manages data access.
     * **`DataService.py`**: Handles SQLite database interactions using `sqlite3`.
 * **`ETLApp.py`**: Executes the ETL pipeline.
@@ -20,8 +20,9 @@ This project implements a data pipeline for Marvel comic book data. It includes 
 * **`Utils/`**: Utility modules.
     * **`Config.py`**: Manages configuration settings.
 * **`architecture/`**: Contains architectural diagrams:
-    * **`DataPipeline.png`**: Project Data Pipeline Diagram
+    * **`count.png`**: Character count result from Jupyter notebook.
     * **`drawing.png`**: Data Flow Diagram
+    * **`eclidrawpipeline0.png`**: Project Data Pipeline Diagram
 * **`character_comic.sql.sqbpro`**: SQLiteStudio project file.
 * **`data_service.log`**: Log file for data service operations.
 * **`logs/`**: Log directory.
@@ -46,7 +47,7 @@ This project implements a data pipeline for Marvel comic book data. It includes 
 * **Data Modeling (`Models/Comic.py`)**: Defines the structure of comic data.
 * **Data Access (`DataLayer/DataService.py`)**: Provides database interaction using `sqlite3`.
 * **Data Transformation (`marvel_dbt/`)**: Uses dbt for data transformations.
-* **Data Analysis (`Comic_Character_Analysis.ipynb`)**: Analyzes and visualizes data, including character and comic plots and character counts using Pandas.
+* **Data Analysis (`Comic_Character_Analysis.ipynb`)**: Analyzes and visualizes data, including character and comic plots and character counts using Pandas, with the result shown in `count.png`.
 * **Configuration (`Utils/Config.py`)**: Manages settings.
 * **Services (`Services/ComicService.py`)**: Handles comic data interactions.
 * **Database (`my_marvel.db`)**: Stores comic data.
@@ -110,9 +111,11 @@ Please note that the dbt models are under development and require further refine
 
 * Uses `sqlite3` directly for database operations.
 * dbt for data transformations (incomplete).
-* Jupyter Notebook for analysis, including character and comic plots and Pandas character counts.
+* Jupyter Notebook for analysis, including character and comic plots and Pandas character counts, shown in `count.png`.
 * Logging for service and dbt operations.
 
+[![Data Pipeline Diagram](architecture/eclidrawpipeline0.png)](architecture/eclidrawpipeline0.png)
 [![Data Flow Drawing](architecture/drawing.png)](architecture/drawing.png)
 
 This document provides an overview of the project. For detailed information, refer to the code and individual files.
+**Developed by: [Daniel Wondyifraw]
