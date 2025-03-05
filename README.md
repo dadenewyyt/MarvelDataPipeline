@@ -1,12 +1,12 @@
 # Marvel Data Pipeline
 
-[![Data Pipeline Image](architecture/eclidrawpipeline0.png)](architecture/eclidrawpipeline0.png)
+[![Data Pipeline Image](architecture/DataPipeline.png)](architecture/DataPipeline.png)
 
 This project implements a data pipeline for Marvel comic book data. It includes data extraction, transformation, loading (ETL), and analysis using Python and SQLite3.
 
 ## Project Structure
 
-* **`Comic_Character_Analysis.ipynb`**: Jupyter Notebook for data analysis and visualization.
+* **`Comic_Character_Analysis.ipynb`**: Jupyter Notebook for data analysis and visualization, including plots of character and comic data, and total character counts using Pandas.
 * **`DataLayer/`**: Manages data access.
     * **`DataService.py`**: Handles SQLite database interactions using `sqlite3`.
 * **`ETLApp.py`**: Executes the ETL pipeline.
@@ -46,7 +46,7 @@ This project implements a data pipeline for Marvel comic book data. It includes 
 * **Data Modeling (`Models/Comic.py`)**: Defines the structure of comic data.
 * **Data Access (`DataLayer/DataService.py`)**: Provides database interaction using `sqlite3`.
 * **Data Transformation (`marvel_dbt/`)**: Uses dbt for data transformations.
-* **Data Analysis (`Comic_Character_Analysis.ipynb`)**: Analyzes and visualizes data.
+* **Data Analysis (`Comic_Character_Analysis.ipynb`)**: Analyzes and visualizes data, including character and comic plots and character counts using Pandas.
 * **Configuration (`Utils/Config.py`)**: Manages settings.
 * **Services (`Services/ComicService.py`)**: Handles comic data interactions.
 * **Database (`my_marvel.db`)**: Stores comic data.
@@ -110,7 +110,7 @@ Please note that the dbt models are under development and require further refine
 
 * Uses `sqlite3` directly for database operations.
 * dbt for data transformations (incomplete).
-* Jupyter Notebook for analysis.
+* Jupyter Notebook for analysis, including character and comic plots and Pandas character counts.
 * Logging for service and dbt operations.
 
 [![Data Flow Drawing](architecture/drawing.png)](architecture/drawing.png)
