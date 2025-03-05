@@ -11,7 +11,6 @@ Here's how the project files and folders are organized:
     ├── Comic_Character_Analysis.ipynb     # Jupyter Notebook for data analysis
     ├── DataLayer/
     │   ├── DataService.py                  # Handles SQLite database interactions
-    │   └── pycache/                  # Compiled Python files
     ├── ETLApp.py                         # Executes the ETL pipeline
     ├── LICENSE                           # Project license
     ├── Models/
@@ -19,20 +18,15 @@ Here's how the project files and folders are organized:
     ├── README.md                          # This file
     ├── ResultSQL/
     │   └── ResultSQL.sql                 # SQL result data
-    ├── SSLcheck.py                       # Checks SSL certificates
+    ├── SSLcheck.py                       # Checks SSL certificate issues with API calls 
     ├── Services/
     │   ├── ComicService.py                 # Interacts with comic data
-    │   └── pycache/                  # Compiled Python files
     ├── Utils/
     │   ├── Config.py                     # Manages configuration settings
-    │   └── pycache/                  # Compiled Python files
     ├── architecture/
-    │   ├── DataPipeline.png              # Data Pipeline Diagram
-    │   ├── DataPipline.png               # (Typo) Data Pipeline Diagram
     │   ├── count.png                     # Character count result
     │   ├── drawing.png                   # Data Flow Diagram
     │   └── eclidrawpipeline0.png         # Project Data Pipeline Diagram
-    ├── character_comic.sql.sqbpro       # SQLiteStudio project file
     ├── cronjob.sh                        # Shell script to run ETL (with venv)
     ├── data_service.log                  # Log file for data service operations
     ├── logs/
@@ -51,7 +45,6 @@ Here's how the project files and folders are organized:
     │   ├── snapshots/                    # dbt snapshot files
     │   └── tests/                        # dbt test files
     ├── my_marvel.db                      # SQLite database file
-    ├── raw/                              # Directory for raw data
     ├── sql/
     │   ├── backup_001.db                 # Database backup
     │   └── sql.sql                       # General SQL scripts
