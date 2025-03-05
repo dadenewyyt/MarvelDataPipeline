@@ -118,3 +118,4 @@ Please note that the dbt models are under development and require further refine
 [![Data Flow Drawing](architecture/drawing.png)](architecture/drawing.png)
 
 This document provides an overview of the project. For detailed information, refer to the code and individual files.
+**Developed by: [Daniel Wondyifraw]
