@@ -1,83 +1,89 @@
 # Marvel Data Pipeline
 
-[![Project Architecture Image](architecture/image1.png)](architecture/image1.png)
+[![Data Pipeline Image](DataPipeline.png)](DataPipeline.png)
 
-This project implements a data pipeline for Marvel comic book data. It includes data extraction, transformation, loading (ETL), and analysis using various tools and technologies, specifically using the `sqlite3` API directly.
+This project implements a data pipeline for Marvel comic book data. It includes data extraction, transformation, loading (ETL), and analysis using Python and SQLite3.
 
 ## Project Structure
 
-* **`Comic_Character_Analysis.ipynb`**: Jupyter Notebook containing data analysis and visualization.
-* **`architecture/`**: Contains architectural images.
-* **`DataLayer/`**: Contains data access logic.
-    * **`DataService.py`**: Manages SQLite database interactions using the `sqlite3` API.
-* **`ETLApp.py`**: Python script for executing the ETL pipeline.
+* **`Comic_Character_Analysis.ipynb`**: Jupyter Notebook for data analysis and visualization.
+* **`DataLayer/`**: Manages data access.
+    * **`DataService.py`**: Handles SQLite database interactions using `sqlite3`.
+* **`ETLApp.py`**: Executes the ETL pipeline.
 * **`LICENSE`**: Project license.
 * **`Models/`**: Defines data models.
     * **`Comic.py`**: Data model for comic book information.
-* **`SSLcheck.py`**: Script for SSL certificate checks.
-* **`Services/`**: Contains business logic services.
-    * **`ComicService.py`**: Service for interacting with comic data.
+* **`SSLcheck.py`**: Checks SSL certificates.
+* **`Services/`**: Provides business logic.
+    * **`ComicService.py`**: Interacts with comic data.
 * **`Utils/`**: Utility modules.
-    * **`Config.py`**: Handles configuration settings.
+    * **`Config.py`**: Manages configuration settings.
 * **`character_comic.sql.sqbpro`**: SQLiteStudio project file.
 * **`data_service.log`**: Log file for data service operations.
-* **`logs/`**: Directory for log files.
-    * **`dbt.log`**: Log file for dbt (data build tool).
+* **`logs/`**: Log directory.
+    * **`dbt.log`**: dbt log file.
 * **`marvel_dbt/`**: dbt project for data transformations.
     * **`README.md`**: dbt project README.
     * **`dbt_project.yml`**: dbt project configuration.
-    * **`models/`**: dbt models for data transformations.
-        * **`example/`**: Example dbt models.
-    * Other dbt related directories.
+    * **`models/`**: dbt models.
+        * **`example/`**: Example dbt models (Incomplete, see below).
+    * Other dbt directories.
 * **`my_marvel.db`**: SQLite database file.
 * **`my_marvel.db-journal`**: SQLite journal file.
-* **`raw/`**: Directory for storing raw data.
-* **`sql/`**: Directory for SQL scripts.
+* **`raw/`**: Directory for raw data.
+* **`sql/`**: SQL scripts.
     * **`backup_001.db`**: Database backup.
     * **`sql.sql`**: General SQL scripts.
-* **`sqls/`**: Additional directory for SQL scripts.
+* **`sqls/`**: Additional SQL scripts.
 
 ## Key Components
 
-* **ETL Pipeline (`ETLApp.py`)**:
-    * Extracts data from a source (likely an API or file).
-    * Transforms the data into a usable format.
-    * Loads the transformed data into a SQLite database (`my_marvel.db`) using the `sqlite3` API.
-* **Data Modeling (`Models/Comic.py`)**: Defines the structure of the comic book data.
-* **Data Access (`DataLayer/DataService.py`)**: Provides an interface for interacting with the database using `sqlite3`.
-* **Data Transformation (`marvel_dbt/`)**: Uses dbt to perform data transformations.
-* **Data Analysis (`Comic_Character_Analysis.ipynb`)**: Performs analysis and visualization of the comic book data.
-* **Configuration (`Utils/Config.py`)**: Manages configuration settings.
-* **Services (`Services/ComicService.py`)**: Provides business logic for interacting with comic data.
-* **Database (`my_marvel.db`)**: Stores the comic book data.
-* **Logging**: Logs are generated for data service operations and dbt transformations.
+* **ETL Pipeline (`ETLApp.py`)**: Extracts, transforms, and loads data into `my_marvel.db` using `sqlite3`.
+* **Data Modeling (`Models/Comic.py`)**: Defines the structure of comic data.
+* **Data Access (`DataLayer/DataService.py`)**: Provides database interaction using `sqlite3`.
+* **Data Transformation (`marvel_dbt/`)**: Uses dbt for data transformations.
+* **Data Analysis (`Comic_Character_Analysis.ipynb`)**: Analyzes and visualizes data.
+* **Configuration (`Utils/Config.py`)**: Manages settings.
+* **Services (`Services/ComicService.py`)**: Handles comic data interactions.
+* **Database (`my_marvel.db`)**: Stores comic data.
+* **Logging**: Logs data service and dbt operations.
+
+## DBT Notes (Incomplete)
+
+The dbt code in the `marvel_dbt/models/` directory is currently incomplete but aims to:
+
+* **Check for null values:** Identify and handle null values in the data.
+* **Check for empty records:** Identify and handle empty records in the data.
+* **Create a materialized view:** Build a materialized view for joining character and comic data.
+
+Please note that the dbt models are under development and require further refinement.
 
 ## Setup and Installation
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/dadenewyyt/MarvelDataPipeline.git](https://www.google.com/search?q=https://github.com/dadenewyyt/MarvelDataPipeline.git)
+    git clone [https://github.com/dadenewyyt/MarvelDataPipeline.git](https://github.com/dadenewyyt/MarvelDataPipeline.git)
     cd MarvelDataPipeline
     ```
 2.  **Create a Virtual Environment (Recommended):**
     ```bash
     python3 -m venv venv
-    source venv/bin/activate #On linux or mac
-    venv\Scripts\activate #On windows
+    source venv/bin/activate  # macOS/Linux
+    venv\Scripts\activate  # Windows
     ```
 3.  **Install Dependencies:**
     ```bash
-    pip install -r requirements.txt #If a requirements.txt file exists, if not install needed packages.
-    pip install pandas requests dbt-core dbt-sqlite #Example of needed packages.
+    pip install -r requirements.txt  # If available
+    pip install pandas requests dbt-core dbt-sqlite  # Example dependencies
     ```
 4.  **Database Setup:**
-    * The project uses SQLite. Ensure SQLite is installed.
-    * Run `ETLApp.py` to create or update the database.
+    * Ensure SQLite is installed.
+    * Run `ETLApp.py` to create/update `my_marvel.db`.
 5.  **dbt Setup:**
-    * Navigate to the `marvel_dbt` directory.
-    * Run `dbt deps` to install dbt dependencies.
-    * Configure your `profiles.yml` file for your sqlite connection.
-    * Run `dbt run` to execute dbt models.
+    * Navigate to `marvel_dbt/`.
+    * Run `dbt deps`.
+    * Configure `profiles.yml` for SQLite.
+    * Run `dbt run`.
 
 ## Usage
 
@@ -85,25 +91,24 @@ This project implements a data pipeline for Marvel comic book data. It includes 
     ```bash
     python ETLApp.py
     ```
-2.  **Run dbt Transformations:**
+2.  **Run dbt:**
     ```bash
     cd marvel_dbt
     dbt run
     ```
 3.  **Analyze Data:**
-    * Open `Comic_Character_Analysis.ipynb` in Jupyter Notebook.
-    * Run the notebook cells.
-4.  **Interact with Services:**
+    * Open `Comic_Character_Analysis.ipynb`.
+    * Run notebook cells.
+4.  **Use Services:**
     * Use `ComicService.py` for data interactions.
 
 ## Key Notes
 
-* This project utilizes SQLite for data storage via the `sqlite3` API directly.
-* dbt is used for data transformations.
-* Jupyter notebooks are used for data analysis.
-* Logging is implemented for data service and dbt operations.
-* Architectural diagrams can be found in the `architecture` folder.
+* Uses `sqlite3` directly for database operations.
+* dbt for data transformations (incomplete).
+* Jupyter Notebook for analysis.
+* Logging for service and dbt operations.
 
-[![Data Flow Image](architecture/image3.png)](architecture/image3.png)
+[![Data Flow Drawing](drawing.png)](drawing.png)
 
-This report is based on the file structure and content of the repository. For a more in-depth understanding, explore the code and documentation within the repository.
+This document provides an overview of the project. For detailed information, refer to the code and individual files.
