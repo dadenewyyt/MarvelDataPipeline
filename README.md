@@ -1,6 +1,6 @@
 # Marvel Data Pipeline
 
-[![Data Pipeline Image](DataPipeline.png)](DataPipeline.png)
+[![Data Pipeline Image](main/architecture/DataPipeline.png)](DataPipeline.png)
 
 This project implements a data pipeline for Marvel comic book data. It includes data extraction, transformation, loading (ETL), and analysis using Python and SQLite3.
 
