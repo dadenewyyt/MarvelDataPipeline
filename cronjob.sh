@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Execute your Python script
-python ~/Desktop/BLUEHARVEST/ETLApp.py
+python ~/Desktop/BlueHarvest/ETLApp.py
