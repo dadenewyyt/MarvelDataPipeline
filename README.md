@@ -8,10 +8,8 @@ This project implements a data pipeline for Marvel comic book data. It includes 
 
 * **`Comic_Character_Analysis.ipynb`**: Jupyter Notebook containing data analysis and visualization.
 * **`architecture/`**: Contains architectural images.
-    * **`image1.png`**: Project architecture overview.
-    * **`image3.png`**: Data flow diagram.
 * **`DataLayer/`**: Contains data access logic.
-    * **`datastore.py`**: Manages SQLite database interactions using the `sqlite3` API.
+    * **`DataService.py`**: Manages SQLite database interactions using the `sqlite3` API.
 * **`ETLApp.py`**: Python script for executing the ETL pipeline.
 * **`LICENSE`**: Project license.
 * **`Models/`**: Defines data models.
@@ -46,7 +44,7 @@ This project implements a data pipeline for Marvel comic book data. It includes 
     * Transforms the data into a usable format.
     * Loads the transformed data into a SQLite database (`my_marvel.db`) using the `sqlite3` API.
 * **Data Modeling (`Models/Comic.py`)**: Defines the structure of the comic book data.
-* **Data Access (`DataLayer/datastore.py`)**: Provides an interface for interacting with the database using `sqlite3`.
+* **Data Access (`DataLayer/DataService.py`)**: Provides an interface for interacting with the database using `sqlite3`.
 * **Data Transformation (`marvel_dbt/`)**: Uses dbt to perform data transformations.
 * **Data Analysis (`Comic_Character_Analysis.ipynb`)**: Performs analysis and visualization of the comic book data.
 * **Configuration (`Utils/Config.py`)**: Manages configuration settings.
