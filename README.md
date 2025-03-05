@@ -76,7 +76,7 @@ The dbt models in `marvel_dbt/models/` are still being developed. We're aiming t
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/dadenewyyt/MarvelDataPipeline.git](https://github.com/dadenewyyt/MarvelDataPipeline.git)
+    git clone https://github.com/dadenewyyt/MarvelDataPipeline.git
     cd MarvelDataPipeline
     ```
 2.  **Create a Virtual Environment (Recommended):**
@@ -101,7 +101,7 @@ The dbt models in `marvel_dbt/models/` are still being developed. We're aiming t
 6.  **Cron Setup (Linux/macOS):**
     * Make `cronjob.sh` executable: `chmod +x cronjob.sh`
     * Open crontab: `crontab -e`
-    * Add cron entry (e.g., daily at midnight): `0 0 * * * /path/to/MarvelDataPipeline/cronjob.sh` (adjust the path).
+    * Add cron entry (e.g., daily at midnight): `0 0 * * * pathto/MarvelDataPipeline/cronjob.sh` (adjust the path).
 
 ## Usage
 
