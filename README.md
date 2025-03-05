@@ -5,58 +5,57 @@
 This project is a data pipeline crafted to extract, transform, and load Marvel comic book data, then analyze and visualize it. We use Python, SQLite3, and a few other tools to make this happen.
 
 ## Project Structure
-
 Here's how the project files and folders are organized:
 
-MarvelDataPipeline/
-├── Comic_Character_Analysis.ipynb     # Jupyter Notebook for data analysis
-├── DataLayer/
-│   ├── DataService.py                  # Handles SQLite database interactions
-│   └── pycache/                  # Compiled Python files
-├── ETLApp.py                         # Executes the ETL pipeline
-├── LICENSE                           # Project license
-├── Models/
-│   └── Comic.py                      # Data model for comic book info
-├── README.md                          # This file
-├── ResultSQL/
-│   └── ResultSQL.sql                 # SQL result data
-├── SSLcheck.py                       # Checks SSL certificates
-├── Services/
-│   ├── ComicService.py                 # Interacts with comic data
-│   └── pycache/                  # Compiled Python files
-├── Utils/
-│   ├── Config.py                     # Manages configuration settings
-│   └── pycache/                  # Compiled Python files
-├── architecture/
-│   ├── DataPipeline.png              # Data Pipeline Diagram
-│   ├── DataPipline.png               # (Typo) Data Pipeline Diagram
-│   ├── count.png                     # Character count result
-│   ├── drawing.png                   # Data Flow Diagram
-│   └── eclidrawpipeline0.png         # Project Data Pipeline Diagram
-├── character_comic.sql.sqbpro       # SQLiteStudio project file
-├── cronjob.sh                        # Shell script to run ETL (with venv)
-├── data_service.log                  # Log file for data service operations
-├── logs/
-│   └── dbt.log                       # dbt log file
-├── marvel_dbt/
-│   ├── README.md                     # dbt project README
-│   ├── analyses/                     # dbt analysis files
-│   ├── dbt_project.yml                # dbt project configuration
-│   ├── macros/                       # dbt macro files
-│   ├── models/
-│   │   └── example/
-│   │       ├── my_first_dbt_model.sql
-│   │       ├── my_second_dbt_model.sql
-│   │       └── schema.yml
-│   ├── seeds/                        # dbt seed files
-│   ├── snapshots/                    # dbt snapshot files
-│   └── tests/                        # dbt test files
-├── my_marvel.db                      # SQLite database file
-├── raw/                              # Directory for raw data
-├── sql/
-│   ├── backup_001.db                 # Database backup
-│   └── sql.sql                       # General SQL scripts
-└── sqls/                             # Additional SQL scripts
+    MarvelDataPipeline/
+    ├── Comic_Character_Analysis.ipynb     # Jupyter Notebook for data analysis
+    ├── DataLayer/
+    │   ├── DataService.py                  # Handles SQLite database interactions
+    │   └── pycache/                  # Compiled Python files
+    ├── ETLApp.py                         # Executes the ETL pipeline
+    ├── LICENSE                           # Project license
+    ├── Models/
+    │   └── Comic.py                      # Data model for comic book info
+    ├── README.md                          # This file
+    ├── ResultSQL/
+    │   └── ResultSQL.sql                 # SQL result data
+    ├── SSLcheck.py                       # Checks SSL certificates
+    ├── Services/
+    │   ├── ComicService.py                 # Interacts with comic data
+    │   └── pycache/                  # Compiled Python files
+    ├── Utils/
+    │   ├── Config.py                     # Manages configuration settings
+    │   └── pycache/                  # Compiled Python files
+    ├── architecture/
+    │   ├── DataPipeline.png              # Data Pipeline Diagram
+    │   ├── DataPipline.png               # (Typo) Data Pipeline Diagram
+    │   ├── count.png                     # Character count result
+    │   ├── drawing.png                   # Data Flow Diagram
+    │   └── eclidrawpipeline0.png         # Project Data Pipeline Diagram
+    ├── character_comic.sql.sqbpro       # SQLiteStudio project file
+    ├── cronjob.sh                        # Shell script to run ETL (with venv)
+    ├── data_service.log                  # Log file for data service operations
+    ├── logs/
+    │   └── dbt.log                       # dbt log file
+    ├── marvel_dbt/
+    │   ├── README.md                     # dbt project README
+    │   ├── analyses/                     # dbt analysis files
+    │   ├── dbt_project.yml                # dbt project configuration
+    │   ├── macros/                       # dbt macro files
+    │   ├── models/
+    │   │   └── example/
+    │   │       ├── my_first_dbt_model.sql
+    │   │       ├── my_second_dbt_model.sql
+    │   │       └── schema.yml
+    │   ├── seeds/                        # dbt seed files
+    │   ├── snapshots/                    # dbt snapshot files
+    │   └── tests/                        # dbt test files
+    ├── my_marvel.db                      # SQLite database file
+    ├── raw/                              # Directory for raw data
+    ├── sql/
+    │   ├── backup_001.db                 # Database backup
+    │   └── sql.sql                       # General SQL scripts
+    └── sqls/                             # Additional SQL scripts
 
 ## Key Components
 
