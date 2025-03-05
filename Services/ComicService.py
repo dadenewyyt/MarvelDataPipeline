@@ -5,7 +5,7 @@ from Utils.Config import Config
 import time as time
 import string
 from ratelimit import limits
-from DataLayer.datastore import DataService  # Import your DataService class
+from DataLayer.DataService import DataService  # Import your DataService class
 import logging
 
 logging.basicConfig(filename='comic_service.log', level=logging.ERROR)
@@ -21,7 +21,7 @@ class ComicService:
         self.data_service = DataService() #add data service.
 
     @limits(calls=CALLS, period=RATE)
-    def get_list_with_offsets(self, name="characters", limit=100, offset=0, name_start_letter=None):
+    def get_list_with_offsets(self, name="characters", limit=100, offset=0, name_start_letter=None,modifiedSince=None):
         public_key = self.config.get_env_vars("PUBLIC_API_KEY")
         private_key = self.config.get_env_vars("PRIVATE_API_KEY")
         base_url = self.base_url
@@ -35,10 +35,15 @@ class ComicService:
             "orderBy": "name",
             "limit": limit,
             "offset": offset,
+            "modifiedSince": modifiedSince,
         }
 
         if name_start_letter:
             params["nameStartsWith"] = name_start_letter
+        
+        if modifiedSince:
+            params["modifiedSince"] = modifiedSince
+
 
         try:
             response = req.get(url, params=params, verify=True)
@@ -54,12 +59,17 @@ class ComicService:
         all_characters = []
         alphabet = str(string.ascii_uppercase)
 
+        last_run = self.data_service.get_last_etl_run()
+        modified_since = last_run.isoformat() if last_run else None
+        #characters = self.get_all_characters(modified_since = modified_since)
+
         for starting_letter in alphabet:
             offset = 0
             while True:
-                comic_characters = self.get_list_with_offsets(offset=offset, name_start_letter=starting_letter)
+                comic_characters = self.get_list_with_offsets(offset=offset, name_start_letter=starting_letter,modifiedSince=modified_since)
                 if not comic_characters:
                     break
+                """all character and comic array gets appended after each loop if not empty"""
                 all_characters.extend(comic_characters)
                 offset += 100
                 time.sleep(1)
@@ -75,7 +85,7 @@ class ComicService:
         return all_characters
 
     @limits(calls=CALLS, period=RATE)
-    def get_comics(self, character_id, limit=100, offset=0):
+    def get_comics(self, character_id, limit=100, offset=0,modifiedSince=None):
         name = f"characters/{character_id}/comics"
         public_key = self.config.get_env_vars("PUBLIC_API_KEY")
         private_key = self.config.get_env_vars("PRIVATE_API_KEY")
@@ -87,6 +97,7 @@ class ComicService:
         params = {
             "limit": limit,
             "offset": offset,
+            "modifiedSince":modifiedSince
         }
 
         try:
@@ -98,7 +109,7 @@ class ComicService:
             logging.error(f"Exception getting comics for character {character_id}: {e}")
             return None
 
-    def insert_comics_to_db(self, character_id):
+    def insert_comics_to_db(self, character_id,modifiedSince=None):
         offset = 0
         while True:
             comics = self.get_comics(character_id, offset=offset)
@@ -109,10 +120,12 @@ class ComicService:
                 self.data_service.insert_character_comics_relationship(character_id, comic["id"])
             offset += 100
 
-    def get_all_characters_and_comics(self):
-        characters = self.get_all_characters()
+    def get_all_characters_and_comics(self,modifiedSince=None):
+        last_run = self.data_service.get_last_etl_run()
+        modified_since = last_run.isoformat() if last_run else None
+        characters = self.get_all_characters(modified_since)
         if characters:
             for character in characters:
-                self.data_service.insert_character_to_db(character)
-                self.insert_comics_to_db(character["id"])
+                self.data_service.insert_character_to_db(character,modifiedSince)
+                self.insert_comics_to_db(character["id"],modified_since)
             self.data_service.close_connection()
