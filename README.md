@@ -4,6 +4,7 @@
 
 This project is a data pipeline crafted to extract, transform, and load Marvel comic book data, then analyze and visualize it. We use Python, SQLite3, and a few other tools to make this happen.
 
+#Generated using  tree  command Linux
 ## Project Structure
 Here's how the project files and folders are organized:
 
