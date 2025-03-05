@@ -79,26 +79,20 @@ The dbt models in `marvel_dbt/models/` are still being developed. We're aiming t
     git clone https://github.com/dadenewyyt/MarvelDataPipeline.git
     cd MarvelDataPipeline
     ```
-2.  **Create a Virtual Environment (Recommended):**
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # macOS/Linux
-    venv\Scripts\activate  # Windows
-    ```
-3.  **Install Dependencies:**
+2.  **Install Dependencies:**
     ```bash
     pip install -r requirements.txt  # If you have one
     pip install pandas requests dbt-core dbt-sqlite  # Example dependencies
     ```
-4.  **Database Setup:**
+3.  **Database Setup:**
     * Make sure SQLite is installed.
     * Run `ETLApp.py` to create or update `my_marvel.db`.
-5.  **dbt Setup:**
+4.  **dbt Setup:**
     * Navigate to `marvel_dbt/`.
     * Run `dbt deps`.
     * Configure `profiles.yml` for SQLite.
     * Run `dbt run`.
-6.  **Cron Setup (Linux/macOS):**
+5.  **Cron Setup (Linux/macOS):**
     * Make `cronjob.sh` executable: `chmod +x cronjob.sh`
     * Open crontab: `crontab -e`
     * Add cron entry (e.g., daily at midnight): `0 0 * * * pathto/MarvelDataPipeline/cronjob.sh` (adjust the path).
