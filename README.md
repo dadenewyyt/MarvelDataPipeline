@@ -1,6 +1,6 @@
 # Marvel Data Pipeline
 
-[![Data Pipeline Image](DataPipeline.png)](DataPipeline.png)
+[![Data Pipeline Image](architecture/eclidrawpipeline0.png)](architecture/eclidrawpipeline0.png)
 
 This project implements a data pipeline for Marvel comic book data. It includes data extraction, transformation, loading (ETL), and analysis using Python and SQLite3.
 
@@ -13,11 +13,15 @@ This project implements a data pipeline for Marvel comic book data. It includes 
 * **`LICENSE`**: Project license.
 * **`Models/`**: Defines data models.
     * **`Comic.py`**: Data model for comic book information.
+* **`README.md`**: This file.
 * **`SSLcheck.py`**: Checks SSL certificates.
 * **`Services/`**: Provides business logic.
     * **`ComicService.py`**: Interacts with comic data.
 * **`Utils/`**: Utility modules.
     * **`Config.py`**: Manages configuration settings.
+* **`architecture/`**: Contains architectural diagrams:
+    * **`DataPipeline.png`**: Project Data Pipeline Diagram
+    * **`drawing.png`**: Data Flow Diagram
 * **`character_comic.sql.sqbpro`**: SQLiteStudio project file.
 * **`data_service.log`**: Log file for data service operations.
 * **`logs/`**: Log directory.
@@ -109,6 +113,6 @@ Please note that the dbt models are under development and require further refine
 * Jupyter Notebook for analysis.
 * Logging for service and dbt operations.
 
-[![Data Flow Drawing](drawing.png)](drawing.png)
+[![Data Flow Drawing](architecture/drawing.png)](architecture/drawing.png)
 
 This document provides an overview of the project. For detailed information, refer to the code and individual files.
