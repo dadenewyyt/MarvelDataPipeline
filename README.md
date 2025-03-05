@@ -40,6 +40,7 @@ This project implements a data pipeline for Marvel comic book data. It includes 
     * **`backup_001.db`**: Database backup.
     * **`sql.sql`**: General SQL scripts.
 * **`sqls/`**: Additional SQL scripts.
+* **`run_etl.sh`**: Shell script to run the ETL process, including virtual environment activation.
 
 ## Key Components
 
@@ -89,12 +90,16 @@ Please note that the dbt models are under development and require further refine
     * Run `dbt deps`.
     * Configure `profiles.yml` for SQLite.
     * Run `dbt run`.
+6. **Cron Setup (Linux/macOS):**
+    * Make `run_etl.sh` executable: `chmod +x run_etl.sh`
+    * Open crontab: `crontab -e`
+    * Add cron entry (e.g., daily at midnight): `0 0 * * * /path/to/your/MarvelDataPipeline/run_etl.sh` (replace with your actual path).
 
 ## Usage
 
 1.  **Run ETL:**
     ```bash
-    python ETLApp.py
+    ./run_etl.sh # Run the shell script to execute the ETL.
     ```
 2.  **Run dbt:**
     ```bash
@@ -118,4 +123,4 @@ Please note that the dbt models are under development and require further refine
 [![Data Flow Drawing](architecture/drawing.png)](architecture/drawing.png)
 
 This document provides an overview of the project. For detailed information, refer to the code and individual files.
-**Developed by: [Daniel Wondyifraw]
+**Developed by: [Daniel Wondyifraw]**
