@@ -1,0 +1,82 @@
+[0m06:32:28.740178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be9d2e5370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be9d42fa10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be99437500>]}
+
+
+============================== 06:32:28.741998 | 0975df19-2b17-404e-98a5-4398d1489eba ==============================
+[0m06:32:28.741998 [info ] [MainThread]: Running with dbt=1.9.2
+[0m06:32:28.742508 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_experimental_parser': 'False', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'static_parser': 'True', 'log_path': 'logs', 'warn_error': 'None', 'use_colors': 'True', 'printer_width': '80', 'target_path': 'None', 'introspect': 'True', 'profiles_dir': '/home/devbox/.dbt', 'partial_parse': 'True', 'log_format': 'default', 'quiet': 'False', 'indirect_selection': 'eager', 'no_print': 'None', 'log_cache_events': 'False', 'debug': 'False', 'invocation_command': 'dbt init', 'cache_selected_only': 'False'}
+[0m06:32:28.748178 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object, got 'PosixPath'.. Dictionary: {'dir': PosixPath('/home/devbox/.dbt')}
+[0m06:32:28.748596 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m06:32:38.389516 [debug] [MainThread]: Starter project path: /home/devbox/anaconda3/lib/python3.12/site-packages/dbt/include/starter_project
+[0m06:32:38.394692 [info ] [MainThread]: 
+Your new dbt project "BlueHarvestMarvel" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m06:32:38.395229 [info ] [MainThread]: Setting up your profile.
+[0m06:32:50.070200 [info ] [MainThread]: Profile BlueHarvestMarvel written to /home/devbox/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m06:32:50.071093 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 21.36869, "process_in_blocks": "0", "process_kernel_time": 0.099863, "process_mem_max_rss": "102752", "process_out_blocks": "88", "process_user_time": 0.786391}
+[0m06:32:50.071524 [debug] [MainThread]: Command `dbt init` succeeded at 06:32:50.071445 after 21.37 seconds
+[0m06:32:50.071874 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be98e6a780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be9915b080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75be98785a60>]}
+[0m06:32:50.072210 [debug] [MainThread]: Flushing usage events
+[0m06:32:50.698422 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:33:48.523334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x725d3826deb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x725d37f9b350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x725d3826c530>]}
+
+
+============================== 06:33:48.524792 | 17a94bda-d8ba-4953-9775-844dee7a0358 ==============================
+[0m06:33:48.524792 [info ] [MainThread]: Running with dbt=1.9.2
+[0m06:33:48.525639 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt init', 'log_cache_events': 'False', 'static_parser': 'True', 'no_print': 'None', 'quiet': 'False', 'introspect': 'True', 'version_check': 'True', 'printer_width': '80', 'profiles_dir': '/home/devbox/.dbt', 'write_json': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'debug': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'target_path': 'None', 'use_experimental_parser': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m06:33:57.847774 [debug] [MainThread]: Starter project path: /home/devbox/anaconda3/lib/python3.12/site-packages/dbt/include/starter_project
+[0m06:33:57.852258 [info ] [MainThread]: 
+Your new dbt project "dbtmarvel" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m06:33:57.852767 [info ] [MainThread]: Setting up your profile.
+[0m06:37:00.215579 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 191.73157, "process_in_blocks": "0", "process_kernel_time": 0.123393, "process_mem_max_rss": "102204", "process_out_blocks": "96", "process_user_time": 0.819969}
+[0m06:37:00.216545 [debug] [MainThread]: Command `dbt init` succeeded at 06:37:00.216386 after 191.73 seconds
+[0m06:37:00.216963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x725d37d370b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x725d3826c530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x725d37bb3680>]}
+[0m06:37:00.217289 [debug] [MainThread]: Flushing usage events
+[0m06:37:00.723899 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:03:40.452880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c373e554380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c373a0b5a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c3739f72510>]}
+
+
+============================== 07:03:40.454352 | 5d424d9b-7d0f-4e59-b078-18817a7a8236 ==============================
+[0m07:03:40.454352 [info ] [MainThread]: Running with dbt=1.9.2
+[0m07:03:40.454864 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'use_colors': 'True', 'target_path': 'None', 'warn_error': 'None', 'use_experimental_parser': 'False', 'log_format': 'default', 'printer_width': '80', 'quiet': 'False', 'version_check': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'log_cache_events': 'False', 'partial_parse': 'True', 'log_path': 'logs', 'cache_selected_only': 'False', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'debug': 'False', 'profiles_dir': '/home/devbox/.dbt', 'empty': 'None', 'static_parser': 'True'}
+[0m07:03:40.460794 [info ] [MainThread]: dbt version: 1.9.2
+[0m07:03:40.461240 [info ] [MainThread]: python version: 3.12.2
+[0m07:03:40.461516 [info ] [MainThread]: python path: /home/devbox/anaconda3/bin/python3.12
+[0m07:03:40.461737 [info ] [MainThread]: os info: Linux-6.6.36.3-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m07:03:40.475306 [info ] [MainThread]: Using profiles dir at /home/devbox/.dbt
+[0m07:03:40.475719 [info ] [MainThread]: Using profiles.yml file at /home/devbox/.dbt/profiles.yml
+[0m07:03:40.475976 [info ] [MainThread]: Using dbt_project.yml file at /home/devbox/Desktop/BlueHarvest/dbt_project.yml
+[0m07:03:40.476241 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m07:03:40.476896 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.078195095, "process_in_blocks": "0", "process_kernel_time": 0.151632, "process_mem_max_rss": "102528", "process_out_blocks": "16", "process_user_time": 0.97364}
+[0m07:03:40.477300 [debug] [MainThread]: Command `dbt debug` failed at 07:03:40.477219 after 0.08 seconds
+[0m07:03:40.477573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c3739c9ea80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c3739e26390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c3739f718e0>]}
+[0m07:03:40.477859 [debug] [MainThread]: Flushing usage events
+[0m07:03:40.980473 [debug] [MainThread]: An error was encountered while trying to flush usage events
