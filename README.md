@@ -81,8 +81,7 @@ The dbt models in `marvel_dbt/models/` are still being developed. We're aiming t
     ```
 2.  **Install Dependencies:**
     ```bash
-    pip install -r requirements.txt  # If you have one
-    pip install pandas requests dbt-core dbt-sqlite  # Example dependencies
+    pip install logging pandas requests dbt-core dbt-sqlite sqllitebrowser jupyter-notebook   # dependencies as needed
     ```
 3.  **Database Setup:**
     * Make sure SQLite is installed.
